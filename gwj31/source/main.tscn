@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/fonts/dogica.tres" type="DynamicFont" id=1]
+[ext_resource path="res://source/main.gd" type="Script" id=2]
+[ext_resource path="res://assets/art/level_tiles.png" type="Texture" id=3]
+[ext_resource path="res://source/helpers/camera.tscn" type="PackedScene" id=4]
+
+[sub_resource type="TileSet" id=1]
+0/name = "level_tiles.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 80, 16 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [ Vector3( 0, 0, 4 ) ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[node name="main" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="text" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 560.0
+margin_top = 354.0
+margin_right = 720.0
+margin_bottom = 366.0
+custom_fonts/font = ExtResource( 1 )
+text = "It worked!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="map_collisions" type="TileMap" parent="."]
+modulate = Color( 0.956863, 0.639216, 0.454902, 1 )
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -524285, 0, 0, -524284, 0, 0, -524283, 0, 4, -524282, 0, 3, -393227, 0, 0, -393226, 0, 0, -393225, 0, 0, -393224, 0, 0, -393223, 0, 1, -393222, 0, 1, -393221, 0, 4, -393220, 0, 3, -393219, 0, 0, -393218, 0, 0, -393217, 0, 0, -458752, 0, 2, -458751, 0, 1, -458750, 0, 0, -458749, 0, 4, -458746, 0, 3, -458745, 0, 0, -458744, 0, 3, -327692, 0, 0, -327691, 0, 2, -393208, 0, 0, -262156, 0, 0, -327672, 0, 2, -196620, 0, 0, -196619, 0, 0, -262136, 0, 0, -131083, 0, 3, -196600, 0, 0, -65547, 0, 3, -131064, 0, 4, -65528, 0, 0, 8, 0, 2, 131061, 0, 2, 65544, 0, 3, 196597, 0, 0, 131080, 0, 1, 262133, 0, 3, 196616, 0, 0, 327669, 0, 1, 262152, 0, 0, 393205, 0, 4, 393206, 0, 0, 327687, 0, 0, 327688, 0, 0, 458742, 0, 0, 458743, 0, 1, 458744, 0, 4, 458745, 0, 1, 458746, 0, 4, 458747, 0, 0, 458748, 0, 1, 458749, 0, 1, 458750, 0, 0, 458751, 0, 0, 393216, 0, 4, 393217, 0, 2, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 3, 393223, 0, 0 )
+
+[node name="map_entities" type="TileMap" parent="."]
+modulate = Color( 0.956863, 0.639216, 0.454902, 1 )
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="camera" parent="." instance=ExtResource( 4 )]
+position = Vector2( 624, 344 )

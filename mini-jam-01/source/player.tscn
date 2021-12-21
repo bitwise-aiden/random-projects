@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/art/heihei.png" type="Texture" id=1]
+[ext_resource path="res://source/player.gd" type="Script" id=2]
+
+[node name="player" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="heihei" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
